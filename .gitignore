@@ -1,0 +1,10 @@
+Library/
+Temp/
+obj/
+Logs/
+*/.idea/
+/.idea
+Assembly-CSharp.csproj
+Shooter.sln
+Assembly-CSharp-Editor.csproj
+Assembly-CSharp-firstpass.csproj
