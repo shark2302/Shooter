@@ -155,9 +155,9 @@ public class Enemy : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(_flash.transform.position, _flash.transform.forward, out hit, _range + 20f))
         {
-            if (gameObject.tag == "Bot" && (hit.transform.gameObject.layer == 10 || hit.transform.gameObject.layer == 8))
+            if (gameObject.CompareTag("Bot") && (hit.transform.gameObject.layer == 10 || hit.transform.gameObject.layer == 8))
                 return false;
-            if (gameObject.tag == "Enemy" && (hit.transform.gameObject.layer == 8 || hit.transform.gameObject.layer == 9))
+            if (gameObject.CompareTag("Enemy") && (hit.transform.gameObject.layer == 8 || hit.transform.gameObject.layer == 9))
                 return false;
         }
         return true;
@@ -172,7 +172,7 @@ public class Enemy : MonoBehaviour
     {
         GameObject nearestEnemy = null;
         float distance = 10000;
-        if (gameObject.tag == "Enemy")
+        if (gameObject.CompareTag("Enemy"))
         {
             foreach (var player in _players)
             {
@@ -186,7 +186,7 @@ public class Enemy : MonoBehaviour
                 }
             }
         }
-        else if (gameObject.tag == "Bot" && _spawners != null)
+        else if (gameObject.CompareTag("Bot") && _spawners != null)
         {
             foreach (var enemy in _spawners.GetAllSpawnedUnits())
             {
