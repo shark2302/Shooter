@@ -5348,7 +5348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 3
-  lookSensetivity: 10
+  lookSensetivity: 15
   Death:
     m_PersistentCalls:
       m_Calls:
