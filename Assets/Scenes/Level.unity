@@ -4204,6 +4204,61 @@ PrefabInstance:
       propertyPath: m_Name
       value: HoldPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 4706221918852016794, guid: 157635ef87780456684385b6b1e7cfbf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706221918893989968, guid: 157635ef87780456684385b6b1e7cfbf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706221918893989970, guid: 157635ef87780456684385b6b1e7cfbf,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706221918893989970, guid: 157635ef87780456684385b6b1e7cfbf,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706221919422564419, guid: 157635ef87780456684385b6b1e7cfbf,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706221919422564419, guid: 157635ef87780456684385b6b1e7cfbf,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706221919959018773, guid: 157635ef87780456684385b6b1e7cfbf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706221920011358404, guid: 157635ef87780456684385b6b1e7cfbf,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706221920118216622, guid: 157635ef87780456684385b6b1e7cfbf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706221920372590123, guid: 157635ef87780456684385b6b1e7cfbf,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 38
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706221920372590123, guid: 157635ef87780456684385b6b1e7cfbf,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4706221920691403545, guid: 157635ef87780456684385b6b1e7cfbf,
         type: 3}
       propertyPath: m_Name
