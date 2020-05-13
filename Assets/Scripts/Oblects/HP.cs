@@ -23,7 +23,15 @@ public class HP : MonoBehaviour
     public void SetHp(float hp)
     {
         _health = hp;
-    } 
+    }
+
+    public void Heel(float heel)
+    {
+        _health += heel;
+        if (_health > 100)
+            _health = 100;
+        _healthBar?.SetHealth(_health);
+    }
 
     public void GetDamage(float _damage)
     {
@@ -33,10 +41,14 @@ public class HP : MonoBehaviour
         {
             if(gameObject.tag == "Player")
                 Destroy(gameObject, 1.5f);
-            else
+            else if(_animator != null)
             {
                 _animator.SetTrigger("Die");
                 Destroy(gameObject, 1.5f);
+            }
+            else
+            {
+                Destroy(gameObject);
             }
         }
     }

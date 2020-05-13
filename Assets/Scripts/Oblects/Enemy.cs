@@ -110,7 +110,7 @@ public class Enemy : MonoBehaviour
         {
             var deltaRotation = target.transform.position - transform.position;
             var rotation = Quaternion.LookRotation(deltaRotation);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 3);
         }
     }
 
@@ -140,9 +140,16 @@ public class Enemy : MonoBehaviour
             GameObject impact = Instantiate(_impact, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impact, 0.1f);
             HP hp = hit.transform.GetComponent<HP>();
+            Armour armour = hit.transform.GetComponent<Armour>();
+            if (armour != null && armour.enabled)
+            {
+                armour.GetDamage(_damage);
+                return;
+            }
             if (hp != null && hit.transform.tag != transform.tag)
             {
                 hp.GetDamage(_damage);
+                
             }
         }
 
@@ -155,8 +162,12 @@ public class Enemy : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(_flash.transform.position, _flash.transform.forward, out hit, _range + 20f))
         {
-            if (gameObject.CompareTag("Bot") && (hit.transform.gameObject.layer == 10 || hit.transform.gameObject.layer == 8))
+            if (gameObject.CompareTag("Bot") &&
+                (hit.transform.gameObject.layer == 10 || hit.transform.gameObject.layer == 8))
+            { 
                 return false;
+            }
+               
             if (gameObject.CompareTag("Enemy") && (hit.transform.gameObject.layer == 8 || hit.transform.gameObject.layer == 9))
                 return false;
         }

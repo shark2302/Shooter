@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 8701965571479214133}
   - component: {fileID: 8701965571479214135}
   - component: {fileID: 8701965571479214132}
+  - component: {fileID: -6220539523845282777}
   m_Layer: 10
   m_Name: Bot
   m_TagString: Bot
@@ -414,6 +415,21 @@ MonoBehaviour:
   _fireRate: 2
   _flash: {fileID: 720433172562455793}
   _audio: {fileID: 8701965571479214133}
+--- !u!114 &-6220539523845282777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8701965571346456461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f167d2b6e56242fda45937e7ed2349e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 1000
+  _healthBar: {fileID: 0}
+  _animator: {fileID: 0}
 --- !u!1 &8701965571346456463
 GameObject:
   m_ObjectHideFlags: 0

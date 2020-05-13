@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
             Death.Invoke();
             _shoot.enabled = false;
         }
+        
         float xMove = Input.GetAxisRaw("Horizontal"); 
         float zMove = Input.GetAxisRaw("Vertical");
         Vector3 moveHorizontal = transform.right * xMove;

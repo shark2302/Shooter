@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMotor : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerMotor : MonoBehaviour
     private Vector3 _rotation = Vector3.zero;
     private float _cameraRotation = 0f;
     private Rigidbody rb;
+   
     
 
     private void Start()
@@ -58,5 +60,7 @@ public class PlayerMotor : MonoBehaviour
             _cam.transform.localRotation = Quaternion.Euler(_cameraRotation, 0,0);
         }
     }
+
+   
     
 }

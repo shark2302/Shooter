@@ -8,6 +8,7 @@ public class Controller : MonoBehaviour
 {
     private GameObject _player;
     private GameObject _bot0;
+    private GameObject _boss;
     
 
     [SerializeField] private SpawnersController _spawners;
@@ -21,7 +22,9 @@ public class Controller : MonoBehaviour
     [SerializeField] private GameObject _botPrefab;
     [SerializeField] private Transform _playerSpot;
     [SerializeField] private Transform _bot0spot;
+    [SerializeField] private Transform _bossSpot;
     [SerializeField] private GameObject _target;
+    [SerializeField] private GameObject _bossPrefab;
     private void Start()
     {
         _endGame += ShowEndGameMenu;
@@ -38,10 +41,12 @@ public class Controller : MonoBehaviour
         _player = Instantiate(_playerPrefab, _playerSpot.position, Quaternion.identity);
         _player.GetComponent<PlayerController>().SetContoller(this);
         _bot0 = Instantiate(_botPrefab, _bot0spot.position, Quaternion.identity);
+        _boss = Instantiate(_bossPrefab, _bossSpot.position, Quaternion.identity);
         Enemy b0 = _bot0.GetComponent<Enemy>();
         b0.SetMainPlayer(_player);
         b0.SetMainTarget(_target);
         b0.SetSpawners(_spawners);
+        _boss.GetComponent<Boss>()?.SetTarget(_player);
         _spawners.gameObject.SetActive(true);
         _spawners.SetPlayers(new[] {_player, _bot0});
         _target.SetActive(true);
@@ -59,6 +64,8 @@ public class Controller : MonoBehaviour
             Destroy(_player);
         if(_bot0 != null)
             Destroy(_bot0);
+        if(_boss != null)
+            Destroy(_boss);
         _spawners.GetComponent<SpawnersController>().DestroyAll();
         _spawners.gameObject.SetActive(false);
         _target.SetActive(false);
