@@ -26,6 +26,7 @@ public class Grenade : MonoBehaviour
         _coutdown -= Time.deltaTime;
         if (_coutdown < 0 && !_hasExploded)
         {
+           
             Explode();
         }
     }
@@ -46,7 +47,7 @@ public class Grenade : MonoBehaviour
         }
 
         _hasExploded = true;
-        Destroy(gameObject);
+        Destroy(gameObject, 1);
     }
     
 }
