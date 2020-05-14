@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d445b6489c2894f0f9146bd4731b4ecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _countAmmoInTheBox: 30
+  _countAmmoInTheBox: 90
 --- !u!114 &598458081495169606
 MonoBehaviour:
   m_ObjectHideFlags: 0

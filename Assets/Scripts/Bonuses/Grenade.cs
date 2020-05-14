@@ -8,6 +8,7 @@ public class Grenade : MonoBehaviour
     [SerializeField] private float _timer = 2f;
     [SerializeField] private float _radius;
     [SerializeField] private float _damage;
+    [SerializeField] private AudioSource _audio;
     private float _coutdown;
 
     private bool _hasExploded;
@@ -31,6 +32,7 @@ public class Grenade : MonoBehaviour
 
     private void Explode()
     {
+        _audio.Play();
         GameObject part = Instantiate(_exploParticle, transform.position, Quaternion.identity);
         Destroy(part, 0.7f);
         Collider[] colliders = Physics.OverlapSphere(transform.position, _radius);

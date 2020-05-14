@@ -9,7 +9,7 @@ public class Controller : MonoBehaviour
     private GameObject _player;
     private GameObject _bot0;
     private GameObject _boss;
-    
+    private List<GameObject> _turrets;
 
     [SerializeField] private SpawnersController _spawners;
     [SerializeField] private GameObject _menuPanel;
@@ -25,8 +25,12 @@ public class Controller : MonoBehaviour
     [SerializeField] private Transform _bossSpot;
     [SerializeField] private GameObject _target;
     [SerializeField] private GameObject _bossPrefab;
+    [SerializeField] private Transform[] _turretSpawningSpots;
+    [SerializeField] private GameObject _turretPrefab;
+    [SerializeField] private GameObject[] _bonuses;
     private void Start()
     {
+        _turrets = new List<GameObject>();
         _endGame += ShowEndGameMenu;
         _playerIsDeath = false;
     }
@@ -50,6 +54,16 @@ public class Controller : MonoBehaviour
         _spawners.gameObject.SetActive(true);
         _spawners.SetPlayers(new[] {_player, _bot0});
         _target.SetActive(true);
+        foreach (var spot in _turretSpawningSpots)
+        {
+            _turrets.Add(Instantiate(_turretPrefab, spot.position, Quaternion.identity));
+        }
+
+        foreach (var bonus in _bonuses)
+        {
+            if (!bonus.active)
+                bonus.SetActive(true);
+        }
     }
 
     public void ShowEndGameMenu()
@@ -66,6 +80,12 @@ public class Controller : MonoBehaviour
             Destroy(_bot0);
         if(_boss != null)
             Destroy(_boss);
+        foreach (var t in _turrets)
+        {
+            if(t != null)
+                Destroy(t);
+        }
+        _turrets.Clear();
         _spawners.GetComponent<SpawnersController>().DestroyAll();
         _spawners.gameObject.SetActive(false);
         _target.SetActive(false);
@@ -101,6 +121,12 @@ public class Controller : MonoBehaviour
     {
         _endGamePanel.SetActive(false);
         StartGame();
+    }
+
+    public void ShowMainMenu()
+    {
+        _endGamePanel.SetActive(false);
+        _menuPanel.SetActive(true);
     }
     
 }

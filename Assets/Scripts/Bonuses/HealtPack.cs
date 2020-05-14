@@ -6,7 +6,9 @@ using UnityEngine;
 public class HealtPack : MonoBehaviour
 {
     [SerializeField] private float _heel;
-    // Start is called before the first frame update
+
+    [SerializeField] private AudioSource _audio;
+    
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
@@ -15,7 +17,9 @@ public class HealtPack : MonoBehaviour
             if(playerHP.GetHP() == 100f) 
                 return;
             playerHP.Heel(_heel);
-            Destroy(gameObject);
+            Debug.Log("Play audio");
+            _audio.Play();
+            gameObject.SetActive(false);
         }
     }
 }

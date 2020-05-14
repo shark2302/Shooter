@@ -411,7 +411,7 @@ MonoBehaviour:
   _safeDistance: 15
   _impact: {fileID: 7972920300271467387, guid: 0e7e2be6ad7484155b34e7c8a9ddfbce, type: 3}
   _panicDistance: 5
-  _damage: 20
+  _damage: 5
   _fireRate: 2
   _flash: {fileID: 720433172562455793}
   _audio: {fileID: 8701965571479214133}
@@ -427,7 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f167d2b6e56242fda45937e7ed2349e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 1000
+  _health: 600
   _healthBar: {fileID: 0}
   _animator: {fileID: 0}
 --- !u!1 &8701965571346456463

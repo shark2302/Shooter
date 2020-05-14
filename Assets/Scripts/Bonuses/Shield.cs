@@ -11,6 +11,7 @@ public class Shield : MonoBehaviour
         if (armour != null)
         {
             armour.enabled = true;
+            gameObject.SetActive(false);
         }
     }
 }

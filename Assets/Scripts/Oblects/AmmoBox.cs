@@ -13,7 +13,7 @@ public class AmmoBox : MonoBehaviour
        if (ps != null)
        {
            ps.AddAmmo(_countAmmoInTheBox);
-           Destroy(gameObject);
+           gameObject.SetActive(false);
        }
    }
 }

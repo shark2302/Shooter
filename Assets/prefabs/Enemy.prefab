@@ -1862,11 +1862,8 @@ MonoBehaviour:
   _panicDistance: 15
   _damage: 20
   _fireRate: 1
-  _player: {fileID: 0}
   _flash: {fileID: 7066575469789658261}
   _audio: {fileID: 7470987127649474764}
-  _players: []
-  _spawners: {fileID: 0}
 --- !u!82 &7470987127649474764
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1877,7 +1874,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d1e1f610019804787a3190ee02cc50b8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 860c6252f9ce6b34da8df32e4de419c1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

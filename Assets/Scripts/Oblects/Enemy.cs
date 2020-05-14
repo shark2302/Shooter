@@ -112,6 +112,8 @@ public class Enemy : MonoBehaviour
             var rotation = Quaternion.LookRotation(deltaRotation);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 3);
         }
+        if(transform.position.y > 1)
+            Destroy(gameObject);
     }
 
     public void Follow(float speed, GameObject target)

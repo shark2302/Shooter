@@ -45,10 +45,16 @@ public class Turret : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject == _target)
+            _target = null;
+    }
+
     public void Shoot()
     {
         _flash.Play();
-        //_audio.Play();
+        _audio.Play();
         RaycastHit hit;
         Vector3 dir = new Vector3(_flash.transform.forward.x, _flash.transform.forward.y - 0.01f, _flash.transform.forward.z);
         if (Physics.Raycast(_flash.transform.position, 
