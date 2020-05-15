@@ -18,6 +18,8 @@ public class SpawnersController : MonoBehaviour
             {
                 _spawners[i].gameObject.SetActive(false);
             }
+            else if(!_spawners[i].gameObject.active)
+                _spawners[i].gameObject.SetActive(true);
         }
     }
 

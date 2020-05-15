@@ -110,7 +110,7 @@ public class Enemy : MonoBehaviour
         {
             var deltaRotation = target.transform.position - transform.position;
             var rotation = Quaternion.LookRotation(deltaRotation);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 3);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 2);
         }
         if(transform.position.y > 1)
             Destroy(gameObject);
