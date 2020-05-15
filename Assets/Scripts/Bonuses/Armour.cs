@@ -24,6 +24,11 @@ public class Armour : MonoBehaviour
         _armour = arm;
     }
 
+    public void HeelArmour()
+    {
+        _armour = 100;
+    }
+    
     
 
     public void GetDamage(float _damage)

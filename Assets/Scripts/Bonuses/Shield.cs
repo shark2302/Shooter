@@ -10,7 +10,10 @@ public class Shield : MonoBehaviour
         Armour armour = other.GetComponent<Armour>();
         if (armour != null)
         {
-            armour.enabled = true;
+            if(!armour.enabled)
+                armour.enabled = true;
+            else 
+                armour.HeelArmour();
             gameObject.SetActive(false);
         }
     }
