@@ -5352,7 +5352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078ccc941c8fe4e0ba424e8ae357c7e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 20
+  _speed: 5
   lookSensetivity: 15
   Death:
     m_PersistentCalls:
@@ -5511,7 +5511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f167d2b6e56242fda45937e7ed2349e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 100000
+  _health: 100
   _healthBar: {fileID: 844627569883089620}
   _animator: {fileID: 0}
 --- !u!114 &4854104560165288159
