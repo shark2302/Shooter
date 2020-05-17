@@ -36,7 +36,7 @@ public class Target : MonoBehaviour
     {
         if(_holded)
             return;
-        if (_timer == _secondsToHold)
+        if (_timer == _secondsToHold && _captured)
         {
             _holded = true;
             _controller.SetPlayerDeath(false);
@@ -51,6 +51,7 @@ public class Target : MonoBehaviour
             _timer = 0;
             _slider.value = 0;
         }
+        
         else if (_playerInField && !_captured)
         {
             _timer += Time.deltaTime;

@@ -5385,7 +5385,7 @@ MonoBehaviour:
   _flash: {fileID: 844627569919553242}
   _impact: {fileID: 7972920300271467387, guid: 0e7e2be6ad7484155b34e7c8a9ddfbce, type: 3}
   _audio: {fileID: 844627570033052618}
-  _ammo: 90
+  _ammo: 120
   _ammoInfo: {fileID: 271218099781659814}
 --- !u!114 &844627570033052620
 MonoBehaviour:
@@ -5544,7 +5544,7 @@ MonoBehaviour:
     type: 3}
   _hands: {fileID: 844627569922620982}
   _force: 20
-  _count: 1
+  _count: 2
   _grenadeInfo: {fileID: 5487438343938538612}
 --- !u!1 &844627570155502550
 GameObject:
