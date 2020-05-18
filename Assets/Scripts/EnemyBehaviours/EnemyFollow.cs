@@ -8,7 +8,7 @@ public class EnemyFollow : StateMachineBehaviour
    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       _enemy = animator.GetBehaviour<EnemyIdle>().GetEnemy();
+       _enemy = animator.GetBehaviour<EnemyIdle>()?.GetEnemy();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

@@ -10,7 +10,7 @@ public class ShootAndFollow : StateMachineBehaviour
    
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        _enemy = animator.GetBehaviour<EnemyIdle>().GetEnemy();
+        _enemy = animator.GetBehaviour<EnemyIdle>()?.GetEnemy();
     }
 
     
