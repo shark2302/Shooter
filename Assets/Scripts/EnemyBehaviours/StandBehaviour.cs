@@ -15,6 +15,8 @@ public class StandBehaviour : StateMachineBehaviour
     
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if(_enemy == null)
+            return;
         if (_enemy.GetTarget() == null)
         {
             _enemy.FindNearestEnemy();

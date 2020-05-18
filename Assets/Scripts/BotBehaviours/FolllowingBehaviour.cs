@@ -10,13 +10,15 @@ public class FolllowingBehaviour : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _bot = animator.GetBehaviour<IdleBehaviour>().GetBot();
-        if(_bot.GetAgent() != null)
+        if(_bot != null && _bot.GetAgent() != null)
             _bot.GetAgent().speed = _bot.GetSpeed();
     }
 
     
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if(_bot == null)
+            return;
         if (_bot.GetTarget() == null)
         {
             _bot.FindNearestEnemy();

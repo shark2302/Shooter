@@ -11,13 +11,15 @@ public class Panic : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _enemy = animator.GetBehaviour<EnemyIdle>().GetEnemy();
-        if(_enemy.GetAgent() != null)
+        if(_enemy != null &&_enemy.GetAgent() != null)
             _enemy.GetAgent().enabled = false;
     }
 
     
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if(_enemy == null)
+            return;
         if (_enemy.GetTarget() == null)
         {
             _enemy.FindNearestEnemy();
