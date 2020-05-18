@@ -14,7 +14,7 @@ public class HealtPack : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             HP playerHP = other.GetComponent<HP>();
-            if(playerHP.GetHP() == 100f) 
+            if(playerHP?.GetHP() == 100f) 
                 return;
             playerHP.Heel(_heel);
             Debug.Log("Play audio");

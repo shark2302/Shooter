@@ -13,7 +13,8 @@ public class Patrol : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _bot = animator.GetBehaviour<IdleBehaviour>().GetBot();
-        _bot.GetAgent().speed = _bot.GetWalkSpeed();
+        if (_bot.GetAgent() != null) 
+            _bot.GetAgent().speed = _bot.GetWalkSpeed();
         waitTime = 2;
         Vector3 pos = animator.transform.position;
         _spots = new[]
@@ -32,7 +33,7 @@ public class Patrol : StateMachineBehaviour
         {
             _bot.FindNearestEnemy();
         }
-        _bot.GetAgent().SetDestination(_curSpot);
+        _bot.GetAgent()?.SetDestination(_curSpot);
         if (Vector3.Distance(animator.transform.position, _curSpot) < 0.5f || waitTime < 0)
         {
             _curSpot = _spots[Random.Range(0, _spots.Length - 1)];

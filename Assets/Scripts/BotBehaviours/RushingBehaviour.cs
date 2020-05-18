@@ -11,7 +11,8 @@ public class RushingBehaviour : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _bot = animator.GetBehaviour<IdleBehaviour>().GetBot();
-        _bot.GetAgent().speed = _bot.GetSpeed();
+       if(_bot.GetAgent()!= null)
+            _bot.GetAgent().speed = _bot.GetSpeed();
     }
 
   
@@ -22,7 +23,7 @@ public class RushingBehaviour : StateMachineBehaviour
 
         if (_bot.GetMainTarget() != null)
         {
-            _bot.GetAgent().SetDestination(_bot.GetMainTarget().transform.position);
+            _bot.GetAgent()?.SetDestination(_bot.GetMainTarget().transform.position);
             if(_bot.GetTarget() == null)
                 _bot.RotateToTarget(animator.transform, _bot.GetMainTarget());
             else 

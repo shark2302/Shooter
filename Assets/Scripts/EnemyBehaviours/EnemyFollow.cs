@@ -23,8 +23,9 @@ public class EnemyFollow : StateMachineBehaviour
             if ((Vector3.Distance(_enemy.GetTarget().transform.position, animator.transform.position) >
                 _enemy.GetRange() || !_enemy.CanShoot()) && _enemy.GetAgent().enabled)
             {
-                _enemy.GetAgent().speed = _enemy.GetSpeed();
-                _enemy.GetAgent().SetDestination(_enemy.GetTarget().transform.position);
+                if(_enemy.GetAgent() != null)
+                    _enemy.GetAgent().speed = _enemy.GetSpeed();
+                _enemy.GetAgent()?.SetDestination(_enemy.GetTarget().transform.position);
             }
             else
             {

@@ -10,7 +10,8 @@ public class FolllowingBehaviour : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _bot = animator.GetBehaviour<IdleBehaviour>().GetBot();
-        _bot.GetAgent().speed = _bot.GetSpeed();
+        if(_bot.GetAgent() != null)
+            _bot.GetAgent().speed = _bot.GetSpeed();
     }
 
     

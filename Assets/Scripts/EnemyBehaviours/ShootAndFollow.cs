@@ -32,8 +32,9 @@ public class ShootAndFollow : StateMachineBehaviour
             else if ((Vector3.Distance(_enemy.GetTarget().transform.position, animator.transform.position) >
                 _enemy.GetSafeDistance() ||!_enemy.CanShoot()) && _enemy.GetAgent().enabled)
             {
-                _enemy.GetAgent().speed = _enemy.GetWalkSpeed();
-                _enemy.GetAgent().SetDestination(_enemy.GetTarget().transform.position);
+                if(_enemy.GetAgent() != null)
+                     _enemy.GetAgent().speed = _enemy.GetWalkSpeed();
+                _enemy.GetAgent()?.SetDestination(_enemy.GetTarget().transform.position);
             }
             else
             {

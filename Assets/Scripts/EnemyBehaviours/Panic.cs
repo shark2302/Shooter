@@ -11,7 +11,8 @@ public class Panic : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         _enemy = animator.GetBehaviour<EnemyIdle>().GetEnemy();
-        _enemy.GetAgent().enabled = false;
+        if(_enemy.GetAgent() != null)
+            _enemy.GetAgent().enabled = false;
     }
 
     
